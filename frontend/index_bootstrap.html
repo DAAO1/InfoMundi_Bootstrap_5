@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InfoMundi 🌍</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Tus estilos (paleta y overrides) -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- NAV / HEADER -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--morado);">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#" style="color: var(--blanco);">InfoMundi 🌍</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" style="color:#e9dfff;" href="#favoritosSection">Favoritos</a></li>
+          <li class="nav-item"><a class="nav-link" style="color:#e9dfff;" href="#limpios">Datos limpios</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="py-5 text-center text-white" style="background-color: var(--morado);">
+    <div class="container">
+      <h1 class="display-5 fw-bold">InfoMundi 🌍</h1>
+      <p class="lead mb-0">Explora países y guarda tus favoritos</p>
+    </div>
+  </header>
+
+  <main class="container my-4">
+    <!-- Buscador -->
+    <section class="mb-4">
+      <div class="row g-2 align-items-center">
+        <div class="col-12 col-md-8">
+          <input type="text" id="input-pais" class="form-control form-control-lg" placeholder="Buscar país por nombre..." />
+        </div>
+        <div class="col-12 col-md-4 d-grid">
+          <button class="btn btn-primary btn-lg" onclick="buscarPais()">Buscar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resultados -->
+    <section id="resultados" class="row g-3"></section>
+
+    <hr class="my-5" />
+
+    <!-- Favoritos -->
+    <section class="favoritos" id="favoritosSection">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="h4 m-0">🌟 Favoritos guardados</h2>
+      </div>
+      <!-- Importante: el contenedor que usa tu script.js conserva el ID 'favoritos' -->
+      <div id="favoritos" class="row g-3"></div>
+    </section>
+
+    <hr class="my-5" />
+
+    <!-- Datos limpios -->
+    <section class="limpios" id="limpios">
+      <h2 class="h4 mb-3">📊 Datos limpios (pipeline ETL)</h2>
+      <div class="table-responsive">
+        <table id="cleanedTable" class="table table-striped table-hover align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>País</th>
+              <th>Fecha</th>
+              <th>Valor</th>
+              <th>Fuente</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-4 text-center">
+    <p class="text-muted mb-0">Proyecto Web con FastAPI & MySQL</p>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Tu JS original para mantener toda la lógica -->
+  <script src="./script.js"></script>
+</body>
+</html>
