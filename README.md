@@ -13,7 +13,7 @@ El sistema permite:
 
 ---
 
-## 🛠️ Tecnologías usadas
+## Tecnologías usadas
 - **Frontend**: HTML, CSS, JavaScript (REST API fetch)  
 - **Backend**: FastAPI (Python)  
 - **ORM**: SQLAlchemy  
